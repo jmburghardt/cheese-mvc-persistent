@@ -32,7 +32,6 @@ public class Menu {
         this.name = name;
     }
 
-
     public int getId() {
         return id;
     }

@@ -80,11 +80,12 @@ public class MenuController {
                                      Errors errors, Model model){
         if (errors.hasErrors()) {
             model.addAttribute("title", "Add item to menu: " + menuDao.findOne(menuId1).getName());
-            return "menu/add";
+            return "menu/add-item";
         }
-        Cheese newCheese = cheeseDao.findOne(cheeseId);
+        //Cheese newCheese = ;
         Menu newMenu = menuDao.findOne(menuId1);
+        newMenu.addItem(cheeseDao.findOne(cheeseId));
         menuDao.save(newMenu);
-        return "redirect:" + newMenu.getId();
+        return "redirect:/menu/view/" + newMenu.getId();
     }
 }
