@@ -11,7 +11,7 @@
     <tr th:each="menus : ${menus}">
         <!--//How do I add a link to my th text?-->
         <td>
-        <a th:text="${menus.name}"></a>
+        <a th:href="'/menu/view/' + ${menus.id}" th:text="${menus.name}"></a>
         </td>
     </tr>
 </table>
